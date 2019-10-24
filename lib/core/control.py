@@ -20,9 +20,8 @@ o = Output(task_name)
 
 domains = ['sungoin.com']
 
-task = {'task': {'domain': domains}}
-
-
+# task = {'task': {'domain': domains}}
+#
 # for domain in domains:
 #     # dns爆破
 #     d = Dns(domain, '{0}/subdomains-10000.txt'.format(WORDLIST_PATH))
@@ -37,14 +36,16 @@ task = {'task': {'domain': domains}}
 # o.save_task(task)
 # 端口扫描
 ips = o.ips
+print(ips)
 
 for ip in ips:
     if bool(re.search('[a-z,A-Z]', ip)):
         continue
-    results = Port.nmap(ip)
-    print(results)
+    print(ip)
+    result = Port.nmap(ip)
+    print(result)
+    o.save_port(ip, result['scan'])
     time.sleep(3)
-
 
 
 '''wd = WebDirectory('http://sungoin.com/',

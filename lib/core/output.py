@@ -69,6 +69,8 @@ class Output():
             self.__results_pipe.set(sub_domain, json.dumps(sub_domains[sub_domain]))
         self.__results_pipe.execute()
 
+    def save_port(self, ip, result):
+        self.__results.set(ip, json.dumps(result))
     # def subdomains(self):
     #     pass
     #
