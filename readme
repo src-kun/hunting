@@ -1,0 +1,11 @@
+dnspython
+dnslib
+requests
+pybloom-live
+tldextract
+oset
+shodan
+censys
+pythonping
+configparser
+bs4

@@ -1,0 +1,2 @@
+/aboutus/
+.git
